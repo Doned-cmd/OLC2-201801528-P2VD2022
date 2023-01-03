@@ -10,14 +10,14 @@ from PIL import Image
 class Arbol(Algorithm):
     def __init__(self, name, data, streamLitInstance: streamlit, columnas, ranges):
         super().__init__(name, data, streamLitInstance)
-        columna = columnas
-        range = ranges
+        self.columna = columnas
+        self.range:str = ranges
 
     def execute(self):
         array_features = []
         tree = preprocessing.LabelEncoder()
         
-        separar = range.split("-")
+        separar = self.range.split("-")
         Iniciosep = int(separar[0])
         Finalsep = int(separar[1])
         

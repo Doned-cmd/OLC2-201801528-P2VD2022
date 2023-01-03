@@ -12,9 +12,9 @@ class regresionLineal(Algorithm):
     
     def __init__(self, name, data, streamLitInstance: streamlit, prediccionxs,ejexs, ejeys):
         super().__init__(name, data, streamLitInstance)
-        ejex = ejexs
-        ejey = ejeys
-        prediccionx = prediccionxs
+        self.ejex = ejexs
+        self.ejey = ejeys
+        self.prediccionx = prediccionxs
         
     def execute(self):
         

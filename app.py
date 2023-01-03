@@ -63,9 +63,9 @@ file_clasRedneuronal = st.file_uploader("Subir documento",key="15")
 if file_clasRedneuronal is not None:
     dataclasneuronal = pd.read_csv(file_clasRedneuronal)
     st.write(dataclasneuronal)
-    Columna = st.selectbox(label='Escriba la columna que se tomara como eje x: ', options=list(dataclasneuronal.columns.values), key="16")
-    Columnas = st.text_input("Escriba el rango de columnas(0-9): ", key="17")
-    RedesClas(data=dataclasneuronal, ejexs=Columna, ejeys=Columnas,name="Clasificacion por red Neuronal", streamLitInstance=st).execute()
+    Columna = st.selectbox(label='Escriba la columna que se tomara como eje y: ', options=list(dataclasneuronal.columns.values), key="16")
+    Columnas = st.text_input("Escriba el nombre de las columnas: ", key="17")
+    RedesClas(data=dataclasneuronal, ejexs=Columnas, ejeys=Columna,name="Clasificacion por red Neuronal", streamLitInstance=st).execute()
 
 dataarb = ""  
 st.title('Clasificacion por Arbol de Decision')

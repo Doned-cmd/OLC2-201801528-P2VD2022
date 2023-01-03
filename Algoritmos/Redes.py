@@ -16,9 +16,9 @@ from pathlib import Path
 class PrediccionNeuronal(Algorithm):
     def __init__(self, name, data, streamLitInstance: streamlit, ejexs, ejeys, prediccions):
         super().__init__(name, data, streamLitInstance)
-        ejex = ejexs
-        ejey = ejeys
-        prediccion = prediccions
+        self.ejex = ejexs
+        self.ejey = ejeys
+        self.prediccion = prediccions
 
     def execute(self):
         X = np.asarray(self.data[self.ejex]).reshape(-1,1)
