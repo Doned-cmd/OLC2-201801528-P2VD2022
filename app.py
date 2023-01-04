@@ -7,6 +7,7 @@ from Algoritmos.RegresionPolinomial import RegresionPolinomial
 from Algoritmos.Redes import PrediccionNeuronal
 from Algoritmos.Redesclas import RedesClas
 from Algoritmos.Arbol import Arbol
+from Algoritmos.Gauss import Gauss
 
 
 st.title('Proyecto 2 - 201801528')
@@ -77,4 +78,13 @@ if file_arbol is not None:
     Columnas = st.text_input("Escriba el rango de columnas(0-9): ", key="22")
     
     Arbol(columnas=Columna,ranges=Columnas,data=dataarb,name="Clasificacion por Arbol de Decision",streamLitInstance=st).execute()
+    
+datagaus = ""  
+st.title('Clasificacion Gausseano')
+file_gauss = st.file_uploader("Subir documento",key="58")
+if file_gauss is not None:
+    datagaus = pd.read_csv(file_gauss)
+    st.write(datagaus)
+
+    Gauss(data=datagaus, name="clasificador por gauss" , streamLitInstance=st).execute()
     
