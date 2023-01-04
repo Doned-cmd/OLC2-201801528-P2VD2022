@@ -29,7 +29,7 @@ class regresionLineal(Algorithm):
         error_medio = mean_squared_error(Y, prediccion, squared=True)
         intercepto = regresionlinealvar.intercept_
 
-        formato_funcion_lineal  = "Y = "+  str(round(coeficiente[0],3)) + "x " + str(round(intercepto, 3))
+        formato_funcion_lineal  = "Y = "+  str(round(coeficiente[0],3)) + " + x " + str(round(intercepto, 3))
 
         writethis = '''digraph G { edge [fontname="Helvetica,Arial,sans-serif"]\n
     subgraph cluster1 {

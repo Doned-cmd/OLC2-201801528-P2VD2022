@@ -40,10 +40,9 @@ class RegresionPolinomial(Algorithm):
         funcion = ""
         contador = 0
         for i in coeficitentes[0]:
-            funcion += str(i) + "x^" + str(contador)
+            funcion += str(i) + "+ x^" + str(contador)
             contador += 1
-
-        self.st.write(funcion)
+        
         r2 = r2_score(y, y_new)
         x_new_min = -x.min()
         x_new_max = x.max()
@@ -56,7 +55,7 @@ class RegresionPolinomial(Algorithm):
         plt.xlim(x.min(), x_new_max)
         plt.ylim(y.min(), y.max())
         pre = y_new[int(self.forecast)-1]
-        self.st.write(pre)
+        
         title = 'Degree = {}; RMSE = {}; R2 = {}; Prediccion = {}'.format(self.degree, round(rmse, 2), round(r2, 4),
                                                                           pre)
         plt.title("\n " + title, fontsize=10)

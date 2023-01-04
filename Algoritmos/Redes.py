@@ -27,13 +27,18 @@ class PrediccionNeuronal(Algorithm):
         net = MLPRegressor(solver='lbfgs', alpha=1e-5,hidden_layer_sizes=(3,3), random_state=1)
         net.fit(xpru, ypru)
         pred = net.predict(np.array([int(self.prediccion)]).reshape(1,-1))
-        self.st.write(pred)
+        
+        
         writethis = '''
-        digraph G { edge [fontname="Helvetica,Arial,sans-serif"]\n
-        subgraph cluster1 {fillcolor="blue:cyan"'''+'''label='''+'''\"'''+ str(pred[0]) +'''\"''' +'''fontcolor="white" style="filled" gradientangle="270"\n
-        node [shape=box fillcolor="red:yellow" style="filled" gradientangle=90]Prediccion;\n
-        }}\n
-        '''
+                    digraph G { 
+                        edge [fontname="Helvetica,Arial,sans-serif"] 
+                        subgraph cluster1 {
+                            
+                            node [shape=box fillcolor="red:yellow" label= %s  style="filled" 
+                            gradientangle=90]Funcion; 
+                        }
+                    } 
+                    ''' % f'"Y = {str(pred[0])}"'
         
         poli_png_path = Path.joinpath(Path('./img').resolve(), 'Neuronal.png')
         
