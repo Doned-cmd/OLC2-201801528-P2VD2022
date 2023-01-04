@@ -32,8 +32,8 @@ class regresionLineal(Algorithm):
         formato_funcion_lineal  = "Y = "+  str(round(coeficiente[0],3)) + "x " + str(round(intercepto, 3))
 
         writethis = '''digraph G { edge [fontname="Helvetica,Arial,sans-serif"]\n
-    subgraph cluster1 {fillcolor="blue:green"'''+'''label='''+'''\"'''+ formato_funcion_lineal + "\n Error Medio:"+ str(error_medio) + "\n R2:" + str(r2) +'''\"''' +'''fontcolor="white" style="filled" gradientangle="270"\n
-    node [shape=box fillcolor="red:yellow" style="filled" gradientangle=90]Funcion;\n
+    subgraph cluster1 {
+    node [shape=box fillcolor="red:yellow"'''  +'''label='''+'''\"'''+ formato_funcion_lineal + "\n Error Medio:"+ str(error_medio) + "\n R2:" + str(r2) +'''\"''' +   '''style="filled" gradientangle=90]F;\n
     }}\n  '''
         
         #graf = open("./Images/funcion.dot", 'w', encoding='utf-8')

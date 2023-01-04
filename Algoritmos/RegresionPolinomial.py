@@ -74,11 +74,8 @@ class RegresionPolinomial(Algorithm):
                     digraph G { 
                         edge [fontname="Helvetica,Arial,sans-serif"] 
                         subgraph cluster1 {
-                            fillcolor="blue:cyan"label= %s 
-                            fontcolor="white" 
-                            style="filled" 
-                            gradientangle="270" 
-                            node [shape=box fillcolor="red:yellow" style="filled" 
+                            
+                            node [shape=box fillcolor="red:yellow" label= %s  style="filled" 
                             gradientangle=90]Funcion; 
                         }
                     } 

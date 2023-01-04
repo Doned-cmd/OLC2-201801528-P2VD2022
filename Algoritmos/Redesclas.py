@@ -27,9 +27,7 @@ class RedesClas(Algorithm):
         xnocom = xnoslash.split(",")
         tamano = len(xnocom)
         X = self.data[[]]
-        
-        self.st.write(xnocom)
-        
+                        
         encoder = LabelEncoder()
         if tamano == 1:
             xnocom[0] = xnocom[0].replace(" ", "")
@@ -122,7 +120,7 @@ class RedesClas(Algorithm):
         
         Y = self.data[self.ejey]
         
-        xval, xprueb, yval, y_test = train_test_split(X,Y)
+        xval, xprueb, yval, yprueb = train_test_split(X,Y)
         scaler = StandardScaler()
         scaler.fit(xval)
         
@@ -139,5 +137,4 @@ class RedesClas(Algorithm):
         
         net.fit(xval, yval)
         predictions=net.predict(xprueb)
-        self.st.write(classification_report(y_test,predictions))
-        
+        self.st.write(classification_report(yprueb,predictions))
